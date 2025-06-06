@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container">
+        <h2><b><u>QR CODE GENERATOR</u></b></h2>
+        <div class="form-group">
+            <div class="form-control">
+                <label><b><u>Enter your Text or URL</u></b></label>
+                <input type="text" id="qrText" onkeyup="generateQRCode()"/>
+            </div>
+            <div class="form-control">
+                <label for="qrSizes"><b><u>Size</u></b></label>
+                <select id="qrSizes" name="size" onchange="generateQRCode()">
+                    <option value="100">100x100</option>
+                    <option value="200">200x200</option>
+                    <option value="300">300x300</option>
+                    <option value="400">400x400</option>
+                    <option value="500">500x500</option>
+                    <option value="600">600x600</option>
+                    <option value="700">700x700</option>
+                    <option value="800">800x800</option>
+                    <option value="900">900x900</option>
+                    <option value="1000">1000x1000</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="colorLight"><b><u>Background Color</u></b></label>
+                <input type="color" id="colorLight" onchange="generateQRCode()"/>
+            </div>
+            <div class="form-control">
+                <label for="colorDark"><b><u>Foreground</u></b></label>
+                <input type="color" id="colorDark" onchange="generateQRCode()"/>
+            </div>
+            <div class="qrCodeView" id="qrCodeView"></div>
+            <div class="form-button">
+                <button id="downloadQR">Download QR</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
